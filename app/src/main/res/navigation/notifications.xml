@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/notifications"
+    app:startDestination="@id/rnotifications">
+
+    <fragment
+        android:id="@+id/rnotifications"
+        android:name="com.example.bottomdeeplink.ui.notifications.NotificationsFragment"
+        tools:layout="@layout/fragment_notifications"
+        android:label="Root Notifications">
+        <action
+            android:id="@+id/action_rnotifications_to_fnotifications"
+            app:destination="@id/fnotifications" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fnotifications"
+        android:name="com.example.bottomdeeplink.ui.fnotifications.FNotificationsFragment"
+        tools:layout="@layout/fragment_notifications"
+        android:label="F Notifications">
+        <action
+            android:id="@+id/action_fnotifications_to_gnotifications"
+            app:destination="@id/gnotifications" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/gnotifications"
+        android:name="com.example.bottomdeeplink.ui.gnotifications.GNotificationsFragment"
+        android:label="G Notifications"
+        tools:layout="@layout/fragment_notifications">
+
+        <deepLink
+            android:id="@+id/test"
+            app:uri="https://test.com" />
+
+    </fragment>
+
+</navigation>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home"
+    app:startDestination="@id/rhome">
+
+    <fragment
+        android:id="@+id/rhome"
+        android:name="com.example.bottomdeeplink.ui.home.HomeFragment"
+        tools:layout="@layout/fragment_home"
+        android:label="Root Home" >
+        <action
+            android:id="@+id/action_home_to_ahome"
+            app:destination="@id/ahome" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/ahome"
+        android:name="com.example.bottomdeeplink.ui.ahome.AHomeFragment"
+        android:label="A Home"
+        tools:layout="@layout/fragment_ahome">
+        <action
+            android:id="@+id/action_ahome_to_bhome"
+            app:destination="@id/bhome" />
+    </fragment>
+    <fragment
+        android:id="@+id/bhome"
+        android:name="com.example.bottomdeeplink.ui.bhome.BHomeFragment"
+        android:label="B Home"
+        tools:layout="@layout/fragment_bhome">
+        <action
+            android:id="@+id/action_bhome_to_chome"
+            app:destination="@id/chome" />
+    </fragment>
+    <fragment
+        android:id="@+id/chome"
+        android:name="com.example.bottomdeeplink.ui.chome.CHomeFragment"
+        android:label="C Home"
+        tools:layout="@layout/fragment_chome"/>
+</navigation>

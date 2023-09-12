@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/dashboard"
+    app:startDestination="@id/rdashboard">
+
+    <fragment
+        android:id="@+id/rdashboard"
+        android:name="com.example.bottomdeeplink.ui.dashboard.DashboardFragment"
+        tools:layout="@layout/fragment_dashboard"
+        android:label="Root Dashboard">
+        <action
+            android:id="@+id/action_rdashboard_to_ddashboard"
+            app:destination="@id/ddashboard" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/ddashboard"
+        android:name="com.example.bottomdeeplink.ui.ddashboard.DDashboardFragment"
+        tools:layout="@layout/fragment_ddashboard"
+        android:label="D Dashboard">
+        <action
+            android:id="@+id/action_ddashboard_to_edashboard"
+            app:destination="@id/edashboard" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/edashboard"
+        android:name="com.example.bottomdeeplink.ui.edashboard.EDashboardFragment"
+        tools:layout="@layout/fragment_edashboard"
+        android:label="E Dashboard">
+    </fragment>
+
+</navigation>
